@@ -1,16 +1,30 @@
 <!DOCTYPE html>
 <html>
-<head> <h1> Beneficis Sant Valentí </h1></head>
-<body> <form method = "get">
-<button value = "Coca o Croissant" onclick = "countCocaCroissant = countCocaCroissant + 1;">Coca o Croissant</button>
-<button value = "Galetes o Neules">Galetes o Neules</button>
-<button value = "PhotoCall">PhotoCall</button>
-</form>
-<script language = "JavaScript">
-countCocaCroissant = 0;
-countGaletesNeules = 0;
-countPhotoCall = 0;
-document.write(countCocaCroissant);
-</script>
-</body>
+  <head> 
+    <h1> Beneficis Sant Valentí </h1>
+  </head>
+  <body>
+    <form method = "get">
+      <button value = "Coca o Croissant" onclick = "add(a);">Coca o Croissant</button>
+      <button value = "Galetes o Neules" onclick = "add(b);">Galetes o Neules</button>
+      <button value = "PhotoCall" onclick = "add(c);">PhotoCall</button>
+    </form>
+    <script language = "JavaScript">
+      var countCocaCroissant = 0;
+      var countGaletesNeules = 0;
+      var countPhotoCall = 0;
+      function add(letter){
+        if(letter == a){
+          countCocaCroissant++;
+        }
+        elif(letter == b){
+          countGaletesNeules++;
+        }
+        elif(letter == c){
+          countPhotoCall = 0;
+        }
+      }
+      document.write(countCocaCroissant);
+    </script>
+  </body>
 </html>
