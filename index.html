@@ -5,23 +5,23 @@
   </head>
   <body>
     <form method = "get">
-      <button value = "Coca o Croissant" onclick = "add(a);">Coca o Croissant</button>
-      <button value = "Galetes o Neules" onclick = "add(b);">Galetes o Neules</button>
-      <button value = "PhotoCall" onclick = "add(c);">PhotoCall</button>
+      <button value = "Coca o Croissant" onclick = "add("a");">Coca o Croissant</button>
+      <button value = "Galetes o Neules" onclick = "add("b");">Galetes o Neules</button>
+      <button value = "PhotoCall" onclick = "add("c");">PhotoCall</button>
     </form>
     <script language = "JavaScript">
       var countCocaCroissant = 0;
       var countGaletesNeules = 0;
       var countPhotoCall = 0;
       function add(letter){
-        if(letter == a){
+        if(letter == "a"){
           countCocaCroissant++;
         }
-        else if(letter == b){
+        else if(letter == "b"){
           countGaletesNeules++;
         }
-        else if(letter == c){
-          countPhotoCall = 0;
+        else if(letter == "c"){
+          countPhotoCall++;
         }
       }
       document.write(countCocaCroissant);
