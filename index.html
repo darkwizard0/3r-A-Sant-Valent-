@@ -4,11 +4,43 @@
     <h1> Beneficis Sant Valentí </h1>
   </head>
   <body>
+    <h2> Sumar Unitats </h2>
     <form method = "get">
       <button value = "Coca o Croissant" type = "button" onclick = "add('a')">Coca o Croissant</button>
       <button value = "Galetes o Neules" type = "button" onclick = "add('b')">Galetes o Neules</button>
       <button value = "PhotoCall" type = "button" onclick = "add('c')">PhotoCall</button>
-      <button value = "Mostra els beneficis" type = "button" onclick = "beneficis()">Mostra els beneficis</button>
+    </form>
+    <p></p>
+    <table border = 1>
+      <tr>
+        <th id = "hide"> </th>
+        <th> Coca/Croissant </th>
+        <th> Galetes/Neules </th>
+        <th> Photo Call </th>
+      </tr>
+      <tr>
+        <th> Unitats Comprades </th>
+        <td id = "coca"> </td>
+        <td id = "galetes"> </td>
+        <td id = "photocall"> </td>
+      </tr>
+      <tr>
+        <th> Benefici </th>
+        <td id = "bcoca"> </td>
+        <td id = "bgaletes"> </td>
+        <td id = "bphotocall"> </td>
+      </tr>
+      <tr>
+        <th> Benefici Total </th>
+        <td colspan = "3" id = "bt"> </td>
+      </tr>
+    </table>
+    <p></p>
+    <h2>Restar unitats</h2>
+    <form method = "get">
+      <button value = "Coca o Croissant" type = "button" onclick = "min('a')">Coca o Croissant</button>
+      <button value = "Galetes o Neules" type = "button" onclick = "min('b')">Galetes o Neules</button>
+      <button value = "PhotoCall" type = "button" onclick = "min('c')">PhotoCall</button>
     </form>
     <script language = "JavaScript">
       var countCocaCroissant = 0;
@@ -18,19 +50,51 @@
       function add(letter){
         if(letter == "a"){
           countCocaCroissant++;
+          document.getElementById("coca").innerHTML = countCocaCroissant;
+          document.getElementById("bcoca").innerHTML = (countCocaCroissant*1.2).toFixed(2)+"€";
         }
         else if(letter == "b"){
           countGaletesNeules++;
+          document.getElementById("galetes").innerHTML = countGaletesNeules;
+          document.getElementById("bgaletes").innerHTML = countGaletesNeules+"€";
         }
         else if(letter == "c"){
           countPhotoCall++;
+          document.getElementById("photocall").innerHTML = countPhotoCall;
+          document.getElementById("bphotocall").innerHTML = (countPhotoCall*preuPhotoCall).toFixed(2)+"€";
         }
+        var result = countCocaCroissant*1.2+countGaletesNeules+countPhotoCall*preuPhotoCall;
+        document.getElementById("bt").innerHTML = result.toFixed(2)+"€";
         return false;
       }
-      function beneficis(){
+      function min(letter){
+        if(letter == "a"){
+          countCocaCroissant--;
+          document.getElementById("coca").innerHTML = countCocaCroissant;
+          document.getElementById("bcoca").innerHTML = (countCocaCroissant*1.2).toFixed(2)+"€";
+        }
+        else if(letter == "b"){
+          countGaletesNeules--;
+          document.getElementById("galetes").innerHTML = countGaletesNeules;
+          document.getElementById("bgaletes").innerHTML = countGaletesNeules+"€";
+        }
+        else if(letter == "c"){
+          countPhotoCall--;
+          document.getElementById("photocall").innerHTML = countPhotoCall;
+          document.getElementById("bphotocall").innerHTML = (countPhotoCall*preuPhotoCall).toFixed(2)+"€";
+        }
         var result = countCocaCroissant*1.2+countGaletesNeules+countPhotoCall*preuPhotoCall;
-        alert(result.toFixed(2)+"€");
+        document.getElementById("bt").innerHTML = result.toFixed(2)+"€";
+        return false;
       }
     </script>
+    <style type = "text/css">
+      #hide{
+        visibility: hidden;
+      }
+      table{
+        text-align: center;
+        border-spacing: 5px;
+      }
   </body>
 </html>
