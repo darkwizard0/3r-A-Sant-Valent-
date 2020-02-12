@@ -5,14 +5,16 @@
   </head>
   <body>
     <form method = "get">
-      <button value = "Coca o Croissant" onclick = "add('a')">Coca o Croissant</button>
-      <button value = "Galetes o Neules" onclick = "add('b')">Galetes o Neules</button>
-      <button value = "PhotoCall" onclick = "add("c")">PhotoCall</button>
+      <button value = "Coca o Croissant" type = "button" onclick = "add('a')">Coca o Croissant</button>
+      <button value = "Galetes o Neules" type = "button" onclick = "add('b')">Galetes o Neules</button>
+      <button value = "PhotoCall" type = "button" onclick = "add('c')">PhotoCall</button>
+      <button value = "Mostra els beneficis" type = "button" onclick = "beneficis()">Mostra els beneficis</button>
     </form>
     <script language = "JavaScript">
       var countCocaCroissant = 0;
       var countGaletesNeules = 0;
       var countPhotoCall = 0;
+      var preuPhotoCall = 1;
       function add(letter){
         if(letter == "a"){
           countCocaCroissant++;
@@ -23,8 +25,12 @@
         else if(letter == "c"){
           countPhotoCall++;
         }
+        return false;
       }
-      document.write(countCocaCroissant);
+      function beneficis(){
+        var result = countCocaCroissant*1.2+countGaletesNeules+countPhotoCall*preuPhotoCall;
+        alert(result.toFixed(2));
+      }
     </script>
   </body>
 </html>
