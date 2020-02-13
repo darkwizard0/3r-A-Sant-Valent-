@@ -74,9 +74,9 @@
         result = countCocaCroissant*1.2 + countGaletesNeules + photocall;
         document.getElementById("bt").innerHTML = result.toFixed(2)+"€";
         document.cookie = "coca = " + countCocaCroissant + "; max-age = 3600; path=/";
-        document.cookie = "galetes = " + photocall + "; max-age = 3600; path=/";
-        document.cookie = "numphotocall " + "; max-age = 3600; path/";
-        document.cookie = "photocall " + "; max-age = 3600; path/";
+        document.cookie = "galetes = " + countGaletesNeules + "; max-age = 3600; path=/";
+        document.cookie = "numphotocall " + countPhotoCall + "; max-age = 3600; path/";
+        document.cookie = "photocall " + photocall + "; max-age = 3600; path/";
         return false;
       }
       function min(letter){
@@ -99,12 +99,13 @@
         result = countCocaCroissant*1.2+countGaletesNeules+photocall;
         document.getElementById("bt").innerHTML = result.toFixed(2)+"€";
         document.cookie = "coca = " + countCocaCroissant + "; max-age = 3600; path=/";
-        document.cookie = "galetes = " + photocall + "; max-age = 3600; path=/";
-        document.cookie = "numphotocall " + "; max-age = 3600; path/";
-        document.cookie = "photocall " + "; max-age = 3600; path/";
+        document.cookie = "galetes = " + countGaletesNeules + "; max-age = 3600; path=/";
+        document.cookie = "numphotocall " + countPhotoCall + "; max-age = 3600; path/";
+        document.cookie = "photocall " + photocall + "; max-age = 3600; path/";
         return false;
       }
       CV = document.cookie.replace(/(?:(?:^|.*;\s*)coca\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+      document.cookie = "cookiename= ; expires = Thu, 01 Jan 1970 00:00:00 GMT"
     </script>
     <style type = "text/css">
       #hide{
