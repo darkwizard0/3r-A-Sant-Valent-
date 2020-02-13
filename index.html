@@ -73,8 +73,10 @@
         }
         result = countCocaCroissant*1.2 + countGaletesNeules + photocall;
         document.getElementById("bt").innerHTML = result.toFixed(2)+"€";
-        document.cookie = "coca= " + countCocaCroissant + "; max-age = 3600; path=/";
-        document.cookie = "photo= " + photocall + "; max-age = 3600; path=/";
+        document.cookie = "coca = " + countCocaCroissant + "; max-age = 3600; path=/";
+        document.cookie = "galetes = " + photocall + "; max-age = 3600; path=/";
+        document.cookie = "numphotocall " + "; max-age = 3600; path/";
+        document.cookie = "photocall " + "; max-age = 3600; path/";
         return false;
       }
       function min(letter){
@@ -96,6 +98,10 @@
         }
         result = countCocaCroissant*1.2+countGaletesNeules+photocall;
         document.getElementById("bt").innerHTML = result.toFixed(2)+"€";
+        document.cookie = "coca = " + countCocaCroissant + "; max-age = 3600; path=/";
+        document.cookie = "galetes = " + photocall + "; max-age = 3600; path=/";
+        document.cookie = "numphotocall " + "; max-age = 3600; path/";
+        document.cookie = "photocall " + "; max-age = 3600; path/";
         return false;
       }
       CV = document.cookie.replace(/(?:(?:^|.*;\s*)coca\s*\=\s*([^;]*).*$)|^.*$/, "$1");
@@ -113,7 +119,7 @@
   
   
   <p></p>
-  <button type = "button" onclick = "alert(CV)" value = "Press"> Press </button>
+  <button type = "button" onclick = "alert(document.cookie)" value = "Press"> Press </button>
   
   
   
