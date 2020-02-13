@@ -74,6 +74,7 @@
         result = countCocaCroissant*1.2 + countGaletesNeules + photocall;
         document.getElementById("bt").innerHTML = result.toFixed(2)+"€";
         document.cookie = "coca= " + countCocaCroissant + "; max-age = 3600; path=/";
+        document.cookie = "photo= " + photocall + "; max-age = 3600; path=/";
         return false;
       }
       function min(letter){
