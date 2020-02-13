@@ -1,6 +1,42 @@
 <!DOCTYPE html>
 <html>
   <head> 
+    <script language = "JavaScript">
+      function getCookie("coca") {
+        var dc = document.cookie;
+        var prefix = name + "=";
+        var begin = dc.indexOf("; " + prefix);
+        if (begin == -1) {
+          begin = dc.indexOf(prefix);
+          if (begin != 0) return null;
+        }
+        else{
+          begin += 2;
+          var end = document.cookie.indexOf(";", begin);
+          if (end == -1) {
+            end = dc.length;
+          }
+        }
+        // because unescape has been deprecated, replaced with decodeURI
+        //return unescape(dc.substring(begin + prefix.length, end));
+        return decodeURI(dc.substring(begin + prefix.length, end));
+      } 
+      function doSomething() {
+        var myCookie = getCookie("MyCookie");
+        if (myCookie == null) {
+          countCocaCroissant = 0;
+          countGaletesNeules = 0;
+          countPhotoCall = 0;
+          photocall = 0;
+        }
+        else {
+          countCocaCroissant = parseFloat(document.cookie.replace(/(?:(?:^|.*;\s*)coca\s*\=\s*([^;]*).*$)|^.*$/, "$1"));
+          countGaletesNeules = parseFloat(document.cookie.replace(/(?:(?:^|.*;\s*)galetes\s*\=\s*([^;]*).*$)|^.*$/, "$1"));
+          countPhotoCall = parseFloat(document.cookie.replace(/(?:(?:^|.*;\s*)numphotocall\s*\=\s*([^;]*).*$)|^.*$/, "$1"));
+          photocall = parseFloat(document.cookie.replace(/(?:(?:^|.*;\s*)photo\s*\=\s*([^;]*).*$)|^.*$/, "$1"));  
+        }
+      }
+    </script>
     <h1> Beneficis Sant Valentí </h1>
   </head>
   <body>
@@ -43,19 +79,6 @@
       <button value = "PhotoCall" type = "button" onclick = "min('c')">PhotoCall</button>
     </form>
     <script language = "JavaScript">
-      alert(document.cookie == null);
-      if(document.cookie == null){
-        countCocaCroissant = 0;
-        countGaletesNeules = 0;
-        countPhotoCall = 0;
-        photocall = 0;
-      }
-      else{
-        countCocaCroissant = parseFloat(document.cookie.replace(/(?:(?:^|.*;\s*)coca\s*\=\s*([^;]*).*$)|^.*$/, "$1"));
-        countGaletesNeules = parseFloat(document.cookie.replace(/(?:(?:^|.*;\s*)galetes\s*\=\s*([^;]*).*$)|^.*$/, "$1"));
-        countPhotoCall = parseFloat(document.cookie.replace(/(?:(?:^|.*;\s*)numphotocall\s*\=\s*([^;]*).*$)|^.*$/, "$1"));
-        photocall = parseFloat(document.cookie.replace(/(?:(?:^|.*;\s*)photo\s*\=\s*([^;]*).*$)|^.*$/, "$1"));
-      }
       document.getElementById("coca").innerHTML = countCocaCroissant;
       document.getElementById("bcoca").innerHTML = (countCocaCroissant*1.2).toFixed(2)+"€";
       document.getElementById("galetes").innerHTML = countGaletesNeules;
