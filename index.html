@@ -47,10 +47,10 @@
       var countGaletesNeules = document.cookie.replace(/(?:(?:^|.*;\s*)galetes\s*\=\s*([^;]*).*$)|^.*$/, "$1");
       var countPhotoCall = document.cookie.replace(/(?:(?:^|.*;\s*)numphotocall\s*\=\s*([^;]*).*$)|^.*$/, "$1");
       var photocall = document.cookie.replace(/(?:(?:^|.*;\s*)photo\s*\=\s*([^;]*).*$)|^.*$/, "$1");
-      alert(countCocaCroissant);
-      alert(countGaletesNeules);
-      alert(countPhotoCall);
-      alert(photocall);
+      alert(typeof(countCocaCroissant));
+      alert(typeof(countGaletesNeules));
+      alert(typeof(countPhotoCall));
+      alert(typeof(photocall));
       var preuPhotoCall = document.getElementById("ph").value;
       function foto(){
         preuPhotoCall = document.getElementById("ph").value;
