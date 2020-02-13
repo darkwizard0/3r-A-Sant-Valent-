@@ -89,8 +89,8 @@
         else if(letter == "c"){
           countPhotoCall--;
           document.getElementById("photocall").innerHTML = countPhotoCall;
-          photocall = (photocall - preuPhotoCall).toFixed(2);
-          document.getElementById("bphotocall").innerHTML = photocall +"€";
+          photocall = photocall - preuPhotoCall;
+          document.getElementById("bphotocall").innerHTML = photocall.toFixed(2) +"€";
         }
         result = countCocaCroissant*1.2+countGaletesNeules+photocall;
         document.getElementById("bt").innerHTML = result.toFixed(2)+"€";
