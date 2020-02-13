@@ -5,10 +5,10 @@
   </head>
   <body>
     <h2> Sumar Unitats </h2>
-    <form method = "get">
+    <form method = "get" onsubmit = "return foto()" >
       <button value = "Coca o Croissant" type = "button" onclick = "add('a')">Coca o Croissant</button>
       <button value = "Galetes o Neules" type = "button" onclick = "add('b')">Galetes o Neules</button>
-      <button value = "PhotoCall" type = "button" onclick = "add('c')">PhotoCall</button>
+       Photocall: <input id = "ph" type = "float" value = "1"></input>
     </form>
     <p></p>
     <table border = 1>
@@ -20,19 +20,19 @@
       </tr>
       <tr>
         <th> Unitats Comprades </th>
-        <td id = "coca"> </td>
-        <td id = "galetes"> </td>
-        <td id = "photocall"> </td>
+        <td id = "coca">   </td>
+        <td id = "galetes">   </td>
+        <td id = "photocall">   </td>
       </tr>
       <tr>
         <th> Benefici </th>
-        <td id = "bcoca"> </td>
-        <td id = "bgaletes"> </td>
-        <td id = "bphotocall"> </td>
+        <td id = "bcoca">   </td>
+        <td id = "bgaletes">   </td>
+        <td id = "bphotocall">   </td>
       </tr>
       <tr>
         <th> Benefici Total </th>
-        <td colspan = "3" id = "bt"> </td>
+        <td colspan = "3" id = "bt">   </td>
       </tr>
     </table>
     <p></p>
@@ -43,10 +43,17 @@
       <button value = "PhotoCall" type = "button" onclick = "min('c')">PhotoCall</button>
     </form>
     <script language = "JavaScript">
-      var countCocaCroissant = 0;
-      var countGaletesNeules = 0;
-      var countPhotoCall = 0;
-      var preuPhotoCall = 1;
+      var countCocaCroissant = 0.00;
+      var countGaletesNeules = 0.00;
+      var countPhotoCall = 0.00;
+      var photocall = 0.00;
+      var preuPhotoCall = document.getElementById("ph").value;
+      function foto(){
+        preuPhotoCall = document.getElementById("ph").value;
+        preuPhotoCall = parseInt(preuPhotoCall);
+        add("c");
+        return false;
+      }
       function add(letter){
         if(letter == "a"){
           countCocaCroissant++;
@@ -61,10 +68,11 @@
         else if(letter == "c"){
           countPhotoCall++;
           document.getElementById("photocall").innerHTML = countPhotoCall;
-          document.getElementById("bphotocall").innerHTML = (countPhotoCall*preuPhotoCall).toFixed(2)+"€";
+          photocall = photocall + preuPhotoCall;
+          document.getElementById("bphotocall").innerHTML = photocall.toFixed(2) +"€";
         }
-        var result = countCocaCroissant*1.2+countGaletesNeules+countPhotoCall*preuPhotoCall;
-        document.getElementById("bt").innerHTML = result.toFixed(2)+"€";
+        result = countCocaCroissant*1.2 + countGaletesNeules + photocall;
+        document.getElementById("bt").innerHTML = result+"€";
         return false;
       }
       function min(letter){
@@ -81,9 +89,9 @@
         else if(letter == "c"){
           countPhotoCall--;
           document.getElementById("photocall").innerHTML = countPhotoCall;
-          document.getElementById("bphotocall").innerHTML = (countPhotoCall*preuPhotoCall).toFixed(2)+"€";
+          document.getElementById("bphotocall").innerHTML = photocall - preuPhotoCall+"€";
         }
-        var result = countCocaCroissant*1.2+countGaletesNeules+countPhotoCall*preuPhotoCall;
+        result = countCocaCroissant*1.2+countGaletesNeules+photocall;
         document.getElementById("bt").innerHTML = result.toFixed(2)+"€";
         return false;
       }
@@ -96,5 +104,27 @@
         text-align: center;
         border-spacing: 5px;
       }
+  </style>
+  
+  
+  
+  
+  
+  
+  <p></p><p></p><p></p><p></p> <button type = "button" onclick = "alert(typeof(result))" value = "show result">show result
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <script language = "JavaScript">
+    
+  </script>
   </body>
 </html>
