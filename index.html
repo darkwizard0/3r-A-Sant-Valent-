@@ -73,7 +73,7 @@
         }
         result = countCocaCroissant*1.2 + countGaletesNeules + photocall;
         document.getElementById("bt").innerHTML = result+"€";
-        document.cookie = "coca=arroz; max-age = 3600; path=/";
+        document.cookie = "coca= " + countCocaCroissant + "; max-age = 3600; path=/";
         return false;
       }
       function min(letter){
