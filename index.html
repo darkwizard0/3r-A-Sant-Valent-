@@ -72,7 +72,7 @@
           document.getElementById("bphotocall").innerHTML = photocall.toFixed(2) +"€";
         }
         result = countCocaCroissant*1.2 + countGaletesNeules + photocall;
-        document.getElementById("bt").innerHTML = result+"€";
+        document.getElementById("bt").innerHTML = result.toFixed(2)+"€";
         document.cookie = "coca= " + countCocaCroissant + "; max-age = 3600; path=/";
         return false;
       }
@@ -97,6 +97,7 @@
         document.getElementById("bt").innerHTML = result.toFixed(2)+"€";
         return false;
       }
+      CV = document.cookie.replace(/(?:(?:^|.*;\s*)test2\s*\=\s*([^;]*).*$)|^.*$/, "$1");
     </script>
     <style type = "text/css">
       #hide{
@@ -111,7 +112,7 @@
   
   
   <p></p>
-  <button type = "button" onclick = "alert(document.cookie[coca])" value = "Press"> Press </button>
+  <button type = "button" onclick = "alert(CV)" value = "Press"> Press </button>
   
   
   
