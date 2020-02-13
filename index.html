@@ -2,7 +2,7 @@
 <html>
   <head> 
     <script language = "JavaScript">
-      function getCookie("coca") {
+      function getCookie(name) {
         var dc = document.cookie;
         var prefix = name + "=";
         var begin = dc.indexOf("; " + prefix);
@@ -22,7 +22,7 @@
         return decodeURI(dc.substring(begin + prefix.length, end));
       } 
       function doSomething() {
-        var myCookie = getCookie("MyCookie");
+        var myCookie = getCookie("coca");
         if (myCookie == null) {
           countCocaCroissant = 0;
           countGaletesNeules = 0;
@@ -79,6 +79,7 @@
       <button value = "PhotoCall" type = "button" onclick = "min('c')">PhotoCall</button>
     </form>
     <script language = "JavaScript">
+      doSomething();
       document.getElementById("coca").innerHTML = countCocaCroissant;
       document.getElementById("bcoca").innerHTML = (countCocaCroissant*1.2).toFixed(2)+"€";
       document.getElementById("galetes").innerHTML = countGaletesNeules;
