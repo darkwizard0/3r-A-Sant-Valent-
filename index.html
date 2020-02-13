@@ -75,8 +75,8 @@
         document.getElementById("bt").innerHTML = result.toFixed(2)+"€";
         document.cookie = "coca = " + countCocaCroissant + "; max-age = 3600; path=/";
         document.cookie = "galetes = " + countGaletesNeules + "; max-age = 3600; path=/";
-        document.cookie = "numphotocall " + countPhotoCall + "; max-age = 3600; path/";
-        document.cookie = "foto " + photocall + "; max-age = 3600; path/";
+        document.cookie = "numphotocall =" + countPhotoCall + "; max-age = 3600; path/";
+        document.cookie = "foto =" + photocall + "; max-age = 3600; path/";
         return false;
       }
       function min(letter){
@@ -139,7 +139,6 @@
         var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
         document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
       }
-      document.cookie = "foto;expires=Thu, 01 Jan 1970 00:00:00 GMT";
     }
   </script>
   </body>
