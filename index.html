@@ -50,7 +50,7 @@
       var preuPhotoCall = document.getElementById("ph").value;
       function foto(){
         preuPhotoCall = document.getElementById("ph").value;
-        preuPhotoCall = parseInt(preuPhotoCall);
+        preuPhotoCall = parseFloat(preuPhotoCall);
         add("c");
         return false;
       }
@@ -89,7 +89,8 @@
         else if(letter == "c"){
           countPhotoCall--;
           document.getElementById("photocall").innerHTML = countPhotoCall;
-          document.getElementById("bphotocall").innerHTML = (photocall - preuPhotoCall).toFixed(2)+"€";
+          photocall = (photocall - preuPhotoCall).toFixed(2);
+          document.getElementById("bphotocall").innerHTML = photocall +"€";
         }
         result = countCocaCroissant*1.2+countGaletesNeules+photocall;
         document.getElementById("bt").innerHTML = result.toFixed(2)+"€";
