@@ -89,7 +89,7 @@
         else if(letter == "c"){
           countPhotoCall--;
           document.getElementById("photocall").innerHTML = countPhotoCall;
-          document.getElementById("bphotocall").innerHTML = photocall - preuPhotoCall+"€";
+          document.getElementById("bphotocall").innerHTML = (photocall - preuPhotoCall).toFixed(2)+"€";
         }
         result = countCocaCroissant*1.2+countGaletesNeules+photocall;
         document.getElementById("bt").innerHTML = result.toFixed(2)+"€";
@@ -109,12 +109,7 @@
   
   
   
-  
-  
-  <p></p><p></p><p></p><p></p> <button type = "button" onclick = "alert(typeof(result))" value = "show result">show result
-  
-  
-  
+
   
   
   
